@@ -7,19 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0B2F98C2BA31CCF007D22EC /* ButtonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2F98B2BA31CCF007D22EC /* ButtonViews.swift */; };
+		A0B2F9902BA31FB4007D22EC /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2F98F2BA31FB4007D22EC /* DateView.swift */; };
 		A0F531502BA22B0000282417 /* DrinkMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F5314F2BA22B0000282417 /* DrinkMeApp.swift */; };
 		A0F531522BA22B0000282417 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F531512BA22B0000282417 /* ContentView.swift */; };
 		A0F531542BA22B0100282417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0F531532BA22B0100282417 /* Assets.xcassets */; };
 		A0F531582BA22B0100282417 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0F531572BA22B0100282417 /* Preview Assets.xcassets */; };
+		A0F531612BA22BC300282417 /* WaveAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F531602BA22BC300282417 /* WaveAnimation.swift */; };
+		A0F531632BA22CFF00282417 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F531622BA22CFF00282417 /* HomePage.swift */; };
+		A0F531672BA23C8C00282417 /* GlassButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F531662BA23C8C00282417 /* GlassButton.swift */; };
+		A0F531692BA242C500282417 /* BottleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F531682BA242C500282417 /* BottleButton.swift */; };
+		A0F5316B2BA2442600282417 /* UndoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F5316A2BA2442600282417 /* UndoButton.swift */; };
+		A0F5316D2BA246AC00282417 /* addButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F5316C2BA246AC00282417 /* addButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A0B2F98B2BA31CCF007D22EC /* ButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViews.swift; sourceTree = "<group>"; };
+		A0B2F98F2BA31FB4007D22EC /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		A0F5314C2BA22B0000282417 /* DrinkMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F5314F2BA22B0000282417 /* DrinkMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkMeApp.swift; sourceTree = "<group>"; };
 		A0F531512BA22B0000282417 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A0F531532BA22B0100282417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0F531552BA22B0100282417 /* DrinkMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrinkMe.entitlements; sourceTree = "<group>"; };
 		A0F531572BA22B0100282417 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A0F531602BA22BC300282417 /* WaveAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveAnimation.swift; sourceTree = "<group>"; };
+		A0F531622BA22CFF00282417 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		A0F531662BA23C8C00282417 /* GlassButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassButton.swift; sourceTree = "<group>"; };
+		A0F531682BA242C500282417 /* BottleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleButton.swift; sourceTree = "<group>"; };
+		A0F5316A2BA2442600282417 /* UndoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoButton.swift; sourceTree = "<group>"; };
+		A0F5316C2BA246AC00282417 /* addButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0B2F9912BA32111007D22EC /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				A0B2F98F2BA31FB4007D22EC /* DateView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		A0F531432BA22B0000282417 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +78,7 @@
 			children = (
 				A0F5314F2BA22B0000282417 /* DrinkMeApp.swift */,
 				A0F531512BA22B0000282417 /* ContentView.swift */,
+				A0F5315E2BA22B9200282417 /* Views */,
 				A0F531532BA22B0100282417 /* Assets.xcassets */,
 				A0F531552BA22B0100282417 /* DrinkMe.entitlements */,
 				A0F531562BA22B0100282417 /* Preview Content */,
@@ -67,6 +92,45 @@
 				A0F531572BA22B0100282417 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A0F5315E2BA22B9200282417 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0F531652BA23C6500282417 /* Buttons */,
+				A0F5315F2BA22B9E00282417 /* WaterAnimation */,
+				A0F531642BA22D0500282417 /* HomeView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0F5315F2BA22B9E00282417 /* WaterAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				A0F531602BA22BC300282417 /* WaveAnimation.swift */,
+			);
+			path = WaterAnimation;
+			sourceTree = "<group>";
+		};
+		A0F531642BA22D0500282417 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				A0F531622BA22CFF00282417 /* HomePage.swift */,
+				A0B2F9912BA32111007D22EC /* SubViews */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		A0F531652BA23C6500282417 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				A0F531662BA23C8C00282417 /* GlassButton.swift */,
+				A0F531682BA242C500282417 /* BottleButton.swift */,
+				A0F5316A2BA2442600282417 /* UndoButton.swift */,
+				A0F5316C2BA246AC00282417 /* addButton.swift */,
+				A0B2F98B2BA31CCF007D22EC /* ButtonViews.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +203,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0B2F9902BA31FB4007D22EC /* DateView.swift in Sources */,
 				A0F531522BA22B0000282417 /* ContentView.swift in Sources */,
+				A0F531612BA22BC300282417 /* WaveAnimation.swift in Sources */,
 				A0F531502BA22B0000282417 /* DrinkMeApp.swift in Sources */,
+				A0F531692BA242C500282417 /* BottleButton.swift in Sources */,
+				A0F531672BA23C8C00282417 /* GlassButton.swift in Sources */,
+				A0F5316B2BA2442600282417 /* UndoButton.swift in Sources */,
+				A0F531632BA22CFF00282417 /* HomePage.swift in Sources */,
+				A0F5316D2BA246AC00282417 /* addButton.swift in Sources */,
+				A0B2F98C2BA31CCF007D22EC /* ButtonViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
