@@ -11,14 +11,23 @@ struct HomePage: View {
     @State private var percent = 0.0
     @State private var waveOffset = Angle(degrees: 0)
     @State var waterCounting: [Double] = []
+    @State private var waterLimitInput: Double? = 3000.0
     
     var body: some View {
         VStack {
             ZStack {
-                DateView()
-                    .frame(height: 700, alignment: .top)
-                    .font(.system(size: 40))
-                    .bold()
+                VStack {
+                    HStack {
+                        Spacer()
+                        DateView()
+                            .font(.system(size: 40))
+                            .bold()
+                        Spacer()
+                        AmountOfWatterButton()
+                    }
+                    .padding()
+                    Spacer()
+                }
                 
                 Text("\(Int(percent))%")
                     .font(.system(size: 70))
@@ -30,7 +39,7 @@ struct HomePage: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
-            Wave(offSet: Angle(degrees: waveOffset.degrees), percent: percent)
+            Wave(waterLimitInput: $waterLimitInput, offSet: Angle(degrees: waveOffset.degrees), percent: percent)
                 .fill(Color.blue)
                 .ignoresSafeArea(.all)
         )

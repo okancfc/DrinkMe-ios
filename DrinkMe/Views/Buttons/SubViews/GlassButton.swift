@@ -16,6 +16,7 @@ struct GlassButton: View {
         
             Button(action: {
                 self.incrementPercent()
+                print(percent)
             }, label: {
                 ZStack {
                     VStack {
@@ -33,7 +34,6 @@ struct GlassButton: View {
             })
         }
     func incrementPercent() {
-        guard percent < 3000.0 else { return }
         percent += 250.0
         waterCounting.append(250.0)
     }

@@ -11,10 +11,11 @@ struct WaveAnimation: View {
     
     @State private var percent = 20.0
     @State private var waveOffset = Angle(degrees: 0)
+    @State private var waterLimitInput: Double? = 3000.0
     
     var body: some View {
         ZStack {
-            Wave(offSet: Angle(degrees: waveOffset.degrees), percent: percent)
+            Wave(waterLimitInput: $waterLimitInput, offSet: Angle(degrees: waveOffset.degrees), percent: percent)
                 .fill(Color.blue)
                 .ignoresSafeArea(.all)
             
@@ -22,7 +23,6 @@ struct WaveAnimation: View {
                 .font(.system(size: 70))
                 .fontWeight(.bold)
             
-            InvisibleSlider(percent: $percent)
         }
         .onAppear {
             withAnimation(.linear(duration: 1.5).repeatForever(autoreverses: false)) {
@@ -33,6 +33,7 @@ struct WaveAnimation: View {
 }
 
 struct Wave: Shape {
+    @Binding var waterLimitInput: Double?
     
     var offSet: Angle
     var percent: Double
@@ -48,7 +49,7 @@ struct Wave: Shape {
         let lowestWave = 0.02
         let highestWave = 1.00
         
-        let newPercent = lowestWave + (highestWave - lowestWave) * (percent / 3000)
+        let newPercent = lowestWave + (highestWave - lowestWave) * (percent / (waterLimitInput ?? 3000.0))
         let waveHeight = 0.015 * rect.height
         let yOffSet = CGFloat(1 - newPercent) * (rect.height - 4 * waveHeight) + 2 * waveHeight
         let startAngle = offSet
@@ -69,25 +70,6 @@ struct Wave: Shape {
     }
 }
 
-struct InvisibleSlider: View {
-    
-    @Binding var percent: Double
-    
-    var body: some View {
-        GeometryReader { geo in
-            let dragGesture = DragGesture(minimumDistance: 0)
-                .onChanged { value in
-                    let percent = 1.0 - Double(value.location.y / geo.size.height)
-                    self.percent = max(0, min(3000, percent))
-                }
-            
-            Rectangle()
-                .opacity(0.001)
-                .frame(width: geo.size.width, height: geo.size.height)
-                .gesture(dragGesture)
-        }
-    }
-}
 
 struct WaveAnimation_Previews: PreviewProvider {
     static var previews: some View {
