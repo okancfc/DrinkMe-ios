@@ -18,6 +18,7 @@ struct HomePage: View {
             ZStack {
                 VStack {
                     HStack {
+                        WaterCounterView(percent: percent)
                         Spacer()
                         DateView()
                             .font(.system(size: 40))
@@ -28,12 +29,7 @@ struct HomePage: View {
                     .padding()
                     Spacer()
                 }
-                
-                Text("\(Int(percent))%")
-                    .font(.system(size: 70))
-                    .fontWeight(.bold)
-                    .opacity(0.5)
-                
+               
                 ButtonViews(percent: $percent, waterCounting: $waterCounting)
             }
         }

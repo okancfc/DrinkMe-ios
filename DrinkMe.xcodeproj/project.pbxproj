@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A071BA782BAB70D100FEB336 /* WaterCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071BA772BAB70D100FEB336 /* WaterCounterView.swift */; };
 		A0B2F98C2BA31CCF007D22EC /* ButtonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2F98B2BA31CCF007D22EC /* ButtonViews.swift */; };
 		A0B2F9902BA31FB4007D22EC /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2F98F2BA31FB4007D22EC /* DateView.swift */; };
 		A0E8B0F52BAA471300421B43 /* AmountOfWatterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E8B0F42BAA471300421B43 /* AmountOfWatterButton.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A071BA772BAB70D100FEB336 /* WaterCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterCounterView.swift; sourceTree = "<group>"; };
 		A0B2F98B2BA31CCF007D22EC /* ButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViews.swift; sourceTree = "<group>"; };
 		A0B2F98F2BA31FB4007D22EC /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		A0E8B0F42BAA471300421B43 /* AmountOfWatterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountOfWatterButton.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				A0B2F98F2BA31FB4007D22EC /* DateView.swift */,
 				A0F531602BA22BC300282417 /* WaveAnimation.swift */,
+				A071BA772BAB70D100FEB336 /* WaterCounterView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				A0F531502BA22B0000282417 /* DrinkMeApp.swift in Sources */,
 				A0F531692BA242C500282417 /* BottleButton.swift in Sources */,
 				A0F531672BA23C8C00282417 /* GlassButton.swift in Sources */,
+				A071BA782BAB70D100FEB336 /* WaterCounterView.swift in Sources */,
 				A0F5316B2BA2442600282417 /* UndoButton.swift in Sources */,
 				A0F531632BA22CFF00282417 /* HomePage.swift in Sources */,
 				A0F5316D2BA246AC00282417 /* addButton.swift in Sources */,
