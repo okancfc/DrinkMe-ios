@@ -7,33 +7,8 @@
 
 import SwiftUI
 
-struct WaveAnimation: View {
-    
-    @State private var percent = 20.0
-    @State private var waveOffset = Angle(degrees: 0)
-    @State private var waterLimitInput: Double? = 3000.0
-    
-    var body: some View {
-        ZStack {
-            Wave(waterLimitInput: $waterLimitInput, offSet: Angle(degrees: waveOffset.degrees), percent: percent)
-                .fill(Color.blue)
-                .ignoresSafeArea(.all)
-            
-            Text("\(Int(percent))%")
-                .font(.system(size: 70))
-                .fontWeight(.bold)
-            
-        }
-        .onAppear {
-            withAnimation(.linear(duration: 1.5).repeatForever(autoreverses: false)) {
-                self.waveOffset = Angle(degrees: 360)
-            }
-        }
-    }
-}
-
 struct Wave: Shape {
-    @Binding var waterLimitInput: Double?
+    var waterLimitInput: Double?
     
     var offSet: Angle
     var percent: Double
@@ -51,7 +26,7 @@ struct Wave: Shape {
         
         let newPercent = lowestWave + (highestWave - lowestWave) * (percent / (waterLimitInput ?? 3000.0))
         let waveHeight = 0.015 * rect.height
-        let yOffSet = CGFloat(1 - newPercent) * (rect.height - 4 * waveHeight) + 2 * waveHeight
+        let yOffSet = max(CGFloat(1 - newPercent) * (rect.height - 4 * waveHeight) + 2 * waveHeight, 60)
         let startAngle = offSet
         let endAngle = offSet + Angle(degrees: 360 + 10)
         
@@ -70,9 +45,8 @@ struct Wave: Shape {
     }
 }
 
+#Preview(body: {
+    Wave(waterLimitInput: 3000, offSet: .degrees(50), percent: 1000)
+})
 
-struct WaveAnimation_Previews: PreviewProvider {
-    static var previews: some View {
-        WaveAnimation()
-    }
-}
+

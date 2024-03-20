@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct HomePage: View {
-    @State private var percent = 0.0
+    @AppStorage("percent") private var percent = 0.0
     @State private var waveOffset = Angle(degrees: 0)
     @State var waterCounting: [Double] = []
-    @State private var waterLimitInput: Double? = 3000.0
+    @AppStorage("waterLimitInput") private var waterLimitInput: Double = 3000.0
     
     var body: some View {
         VStack {
@@ -23,7 +23,7 @@ struct HomePage: View {
                             .font(.system(size: 40))
                             .bold()
                         Spacer()
-                        AmountOfWatterButton()
+                        AmountOfWatterButton(waterLimitInput: $waterLimitInput)
                     }
                     .padding()
                     Spacer()
@@ -39,7 +39,7 @@ struct HomePage: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
-            Wave(waterLimitInput: $waterLimitInput, offSet: Angle(degrees: waveOffset.degrees), percent: percent)
+            Wave(waterLimitInput: waterLimitInput, offSet: Angle(degrees: waveOffset.degrees), percent: percent)
                 .fill(Color.blue)
                 .ignoresSafeArea(.all)
         )

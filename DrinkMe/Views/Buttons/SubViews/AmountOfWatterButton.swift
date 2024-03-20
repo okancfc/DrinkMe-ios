@@ -9,7 +9,8 @@ import SwiftUI
 
 struct AmountOfWatterButton: View {
     @State private var showingAlert2 = false
-    @State private var waterLimitInput: Double? 
+    @Binding var waterLimitInput: Double
+    @State private var waterLimit: String = ""
     
     private let numberFormatter: NumberFormatter = {
         let numberFormatter = NumberFormatter()
@@ -27,11 +28,19 @@ struct AmountOfWatterButton: View {
                 .bold()
         })
         .alert("Please enter your DAILY LIMIT", isPresented: $showingAlert2) {
-            TextField("3000ml...", value: $waterLimitInput, formatter: numberFormatter)
+            TextField("3000ml...", text: $waterLimit)
+            Button("OK") {
+                if let value = Double(waterLimit) {
+                    waterLimitInput = value
+                } else {
+                    print("Please enter valid number!")
+                }
+            }
+            
         }
     }
 }
 
 #Preview {
-    AmountOfWatterButton()
+    AmountOfWatterButton(waterLimitInput: .constant(2))
 }

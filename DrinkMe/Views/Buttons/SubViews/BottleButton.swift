@@ -36,7 +36,6 @@ struct BottleButton: View {
         })
     }
     func incrementPercent() {
-        guard percent < 3000.0 else { return }
         percent += 500.0
         waterCounting.append(500.0)
     }
