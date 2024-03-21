@@ -14,6 +14,7 @@ struct WaterCounterView: View {
     var body: some View {
         VStack{
             Image(systemName: "water.waves")
+                .font(.system(size: 70))
                 .foregroundColor(.black)
                 .font(.largeTitle)
                 .bold()

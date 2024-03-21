@@ -16,13 +16,24 @@ struct HomePage: View {
     var body: some View {
         VStack {
             ZStack {
+                MotivationMessage()
+                    .opacity(0.6)
                 VStack {
                     HStack {
-                        WaterCounterView(percent: percent)
+                        HStack {
+                            Text("💧")
+                                .font(.title2)
+                                .padding(.horizontal, -10)
+                            
+                            Text("\(percent / 1000,specifier: "%.2f")L")
+                                .font(.title)
+                            
+                        }
                         Spacer()
                         DateView()
                             .font(.system(size: 40))
                             .bold()
+                        Spacer()
                         Spacer()
                         AmountOfWatterButton(waterLimitInput: $waterLimitInput)
                     }
@@ -36,17 +47,32 @@ struct HomePage: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
             Wave(waterLimitInput: waterLimitInput, offSet: Angle(degrees: waveOffset.degrees), percent: percent)
-                .fill(Color.blue)
+                .overlay(
+                    LinearGradient(gradient: Gradient(colors: [.white, Color(#colorLiteral(red: 0.2133937478, green: 0.5015463233, blue: 0.9232358336, alpha: 1)), .blue]), startPoint: .top, endPoint: .bottom)
+                            .mask(Wave(waterLimitInput: waterLimitInput, offSet: Angle(degrees: waveOffset.degrees), percent: percent))
+                    )
                 .ignoresSafeArea(.all)
         )
         .background(
             Color(uiColor: .systemBackground)
                 .edgesIgnoringSafeArea(.all)
+            
         )
+        .onReceive(Timer.publish(every: 60, on: .current, in: .default).autoconnect()) { _ in
+            let date = Date()
+            let calendar = Calendar.current
+            let hour = calendar.component(.hour, from: date)
+            let minutes = calendar.component(.minute, from: date)
+            
+            if hour == 23 && minutes == 59 {
+                percent = 0.0
+            }
+        }
         .onAppear {
             withAnimation(Animation.linear(duration: 1.5).repeatForever(autoreverses: false)) {
                 self.waveOffset = Angle(degrees: 360)
-            }
+        
+                }
         }
         .animation(.easeInOut, value: percent)
     }

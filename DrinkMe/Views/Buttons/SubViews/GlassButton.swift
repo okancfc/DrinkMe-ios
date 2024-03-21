@@ -34,7 +34,7 @@ struct GlassButton: View {
             })
         }
     func incrementPercent() {
-        percent += 250.0
+            percent += 250.0
         waterCounting.append(250.0)
     }
 }

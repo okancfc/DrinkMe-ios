@@ -13,10 +13,15 @@ struct Wave: Shape {
     var offSet: Angle
     var percent: Double
     
-    var animatableData: Double {
-        get { offSet.degrees }
-        set { offSet = Angle(degrees: newValue) }
-    }
+    var animatableData: AnimatablePair<Double, Double> {
+            get {
+                AnimatablePair(offSet.degrees, percent)
+            }
+            set {
+                offSet = Angle(degrees: newValue.first)
+                percent = newValue.second
+            }
+        }
     
     func path(in rect: CGRect) -> Path {
         var p = Path()
@@ -29,24 +34,19 @@ struct Wave: Shape {
         let yOffSet = max(CGFloat(1 - newPercent) * (rect.height - 4 * waveHeight) + 2 * waveHeight, 60)
         let startAngle = offSet
         let endAngle = offSet + Angle(degrees: 360 + 10)
-        
         p.move(to: CGPoint(x: 0, y: yOffSet + waveHeight * CGFloat(sin(offSet.radians))))
+        
         
         for angle in stride(from: startAngle.degrees, through: endAngle.degrees, by: 5) {
             let x = CGFloat((angle - startAngle.degrees) / 360) * rect.width
-            p.addLine(to: CGPoint(x: x, y: yOffSet + waveHeight * CGFloat(sin(Angle(degrees: angle).radians))))
+                p.addLine(to: CGPoint(x: x, y: yOffSet + waveHeight * CGFloat(sin(Angle(degrees: angle).radians))))
         }
-        
-        p.addLine(to: CGPoint(x: rect.width, y: rect.height))
-        p.addLine(to: CGPoint(x: 0, y: rect.height))
-        p.closeSubpath()
-        
+            p.addLine(to: CGPoint(x: rect.width, y: rect.height))
+            p.addLine(to: CGPoint(x: 0, y: rect.height))
+            p.closeSubpath()
+              
         return p
     }
 }
-
-#Preview(body: {
-    Wave(waterLimitInput: 3000, offSet: .degrees(50), percent: 1000)
-})
 
 
