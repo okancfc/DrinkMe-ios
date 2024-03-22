@@ -16,7 +16,7 @@ struct GlassButton: View {
         
             Button(action: {
                 self.incrementPercent()
-                print(percent)
+                HapticManager.instance.impact(style: .soft)
             }, label: {
                 ZStack {
                     VStack {

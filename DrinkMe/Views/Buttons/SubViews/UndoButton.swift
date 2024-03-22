@@ -15,6 +15,7 @@ struct UndoButton: View {
         
         Button(action: {
             self.decreasePercent()
+            HapticManager.instance.notification(type: .success)
         }, label: {
             Image(systemName: "arrow.uturn.backward.circle")
                 .resizable()

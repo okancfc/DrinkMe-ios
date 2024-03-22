@@ -11,6 +11,8 @@ struct AmountOfWatterButton: View {
     @State private var showingAlert2 = false
     @Binding var waterLimitInput: Double
     @State private var waterLimit: String = ""
+    @State private var isPresented = false
+
     
     private let numberFormatter: NumberFormatter = {
         let numberFormatter = NumberFormatter()
@@ -21,12 +23,19 @@ struct AmountOfWatterButton: View {
     var body: some View {
         Button(action: {
             showingAlert2 = true
+            HapticManager.instance.impact(style: .soft)
+            isPresented.toggle()
         }, label: {
             Image(systemName: "gearshape")
                 .foregroundColor(.black)
                 .font(.largeTitle)
                 .bold()
         })
+        .sheet(isPresented: $isPresented) {
+                FullScreenModalView()
+
+        }
+        /*
         .alert("Please enter your DAILY LIMIT", isPresented: $showingAlert2) {
             TextField("3000ml...", text: $waterLimit)
             Button("OK") {
@@ -36,8 +45,7 @@ struct AmountOfWatterButton: View {
                     print("Please enter valid number!")
                 }
             }
-            
-        }
+            */
     }
 }
 

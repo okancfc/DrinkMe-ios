@@ -15,6 +15,7 @@ struct BottleButton: View {
 
         Button(action: {
             self.incrementPercent()
+            HapticManager.instance.impact(style: .soft)
         }, label: {
             ZStack {
                 VStack {

@@ -64,7 +64,7 @@ struct HomePage: View {
             let hour = calendar.component(.hour, from: date)
             let minutes = calendar.component(.minute, from: date)
             
-            if hour == 23 && minutes == 59 {
+            if hour == 14 && minutes == 28 {
                 percent = 0.0
             }
         }

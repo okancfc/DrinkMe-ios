@@ -23,6 +23,7 @@ struct AddButton: View {
         
         Button(action: {
             showingAlert = true
+            HapticManager.instance.impact(style: .soft)
         }, label: {
             Image(systemName: "plus.circle")
                 .resizable()

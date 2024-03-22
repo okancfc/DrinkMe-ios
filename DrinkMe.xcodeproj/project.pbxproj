@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A02528412BAD91A500405832 /* FullScreenModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02528402BAD91A500405832 /* FullScreenModalView.swift */; };
 		A071BA782BAB70D100FEB336 /* WaterCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071BA772BAB70D100FEB336 /* WaterCounterView.swift */; };
 		A09874EF2BAC91FD00F002EC /* MotivationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09874EE2BAC91FD00F002EC /* MotivationMessage.swift */; };
 		A0B2F98C2BA31CCF007D22EC /* ButtonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2F98B2BA31CCF007D22EC /* ButtonViews.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A02528402BAD91A500405832 /* FullScreenModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenModalView.swift; sourceTree = "<group>"; };
 		A071BA772BAB70D100FEB336 /* WaterCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterCounterView.swift; sourceTree = "<group>"; };
 		A09874EE2BAC91FD00F002EC /* MotivationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationMessage.swift; sourceTree = "<group>"; };
 		A0B2F98B2BA31CCF007D22EC /* ButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViews.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				A0F5316A2BA2442600282417 /* UndoButton.swift */,
 				A0F5316C2BA246AC00282417 /* addButton.swift */,
 				A0E8B0F42BAA471300421B43 /* AmountOfWatterButton.swift */,
+				A02528402BAD91A500405832 /* FullScreenModalView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				A0F531612BA22BC300282417 /* WaveAnimation.swift in Sources */,
 				A0F531502BA22B0000282417 /* DrinkMeApp.swift in Sources */,
 				A0F531692BA242C500282417 /* BottleButton.swift in Sources */,
+				A02528412BAD91A500405832 /* FullScreenModalView.swift in Sources */,
 				A0F531672BA23C8C00282417 /* GlassButton.swift in Sources */,
 				A09874EF2BAC91FD00F002EC /* MotivationMessage.swift in Sources */,
 				A071BA782BAB70D100FEB336 /* WaterCounterView.swift in Sources */,
